@@ -19,11 +19,11 @@ class Autor(models.Model):
 class Post(models.Model):
     id= models.AutoField(primary_key = True)
     titulo= models.CharField('Titulo', max_length=90, blank= False, null=False)
-    slug= models.CharField('Slug', max_length=100, blank= False, null=False)
     contenido= models.TextField('Contenido')
     autor=models.ForeignKey('Autor', on_delete=models.CASCADE)
     estado=models.BooleanField('Autor activo/No activo', default=True)
     fecha_creacion=models.DateField ('Fecha de Creacion',auto_now=True, auto_now_add=False)
+   
     
     class Meta:
         verbose_name='Post'
